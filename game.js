@@ -3,7 +3,7 @@ const ctx = canvas.getContext("2d");
 
 // Load background image
 const backgroundImg = new Image();
-backgroundImg.src = "assets/images/Level_1.png";
+backgroundImg.src = "assets/images/background.png";
 
 const timerEl = document.getElementById("timer");
 const scoreboardEl = document.getElementById("scoreboard");
@@ -31,7 +31,7 @@ const player = { x: 80, y: groundY - 60, width: 50, height: 60, vy: 0, speed: 4,
 // --- Levels --- //
 const levels = [
   {
-    background: "assets/images/Level_1.png",
+    
     rocks: [
       { x: 100, y: groundY - 25, width: 50, height: 40 },
       { x: 700, y: groundY - 25, width: 50, height: 40 },
@@ -48,7 +48,7 @@ const levels = [
   },
 
   {
-    background: "assets/images/Level_2.png",
+    
     rocks: [
       { x: 200, y: groundY - 40, width: 70, height: 40 },
       { x: 600, y: groundY - 50, width: 80, height: 50 },
@@ -66,7 +66,7 @@ const levels = [
   },
 
   {
-    background: "assets/images/Level_3.png",
+    
     rocks: [
       { x: 150, y: groundY - 35, width: 50, height: 35 },
       { x: 450, y: groundY - 40, width: 80, height: 40 },
