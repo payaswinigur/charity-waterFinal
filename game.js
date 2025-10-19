@@ -85,6 +85,7 @@ const levels = [
   },
 ];
 
+
 let rocks = levels[currentLevel].rocks;
 let logs = levels[currentLevel].logs;
 let canteens = levels[currentLevel].canteens;
@@ -154,6 +155,19 @@ function update() {
     }
   });
 
+  // platforms (solid)
+  rocks.forEach(rock => {
+    if (
+      player.x < rock.x + rock.width &&
+      player.x + player.width > rock.x &&
+      player.y + player.height > rock.y &&
+      player.y < rock.y + rock.height
+    ) {
+      if (player.x < rock.x) player.x = rock.x - player.width;
+      else player.x = rock.x + rock.width;
+    }
+  });
+
   // Rocks (solid)
   rocks.forEach(rock => {
     if (
@@ -213,6 +227,19 @@ function draw() {
   logs.forEach(l => {
     const img = new Image();
     img.src = "assets/images/log.png";
+    ctx.drawImage(img, l.x, l.y, l.width, l.height);
+  });
+
+   // platforms
+  platform.forEach(l => {
+    const img = new Image();
+    img.src = "assets/images/platform.png";
+    ctx.drawImage(img, l.x, l.y, l.width, l.height);
+  });
+
+  water.forEach(l => {
+    const img = new Image();
+    img.src = "assets/images/water.png";
     ctx.drawImage(img, l.x, l.y, l.width, l.height);
   });
 
