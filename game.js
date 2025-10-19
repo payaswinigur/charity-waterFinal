@@ -88,7 +88,8 @@ const levels = [
 let rocks = levels[currentLevel].rocks;
 let logs = levels[currentLevel].logs;
 let canteens = levels[currentLevel].canteens;
-backgroundImg.src = levels[currentLevel].background;
+backgroundImg.src = "assets/images/background.png";
+
 
 const water = { x: 0, y: groundY + 20, width: canvas.width, height: 100, color: "#4682b4" };
 
